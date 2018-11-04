@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^5.8.0",
     "jest-cli": "^23.6.0"
   },
   "dependencies": {
