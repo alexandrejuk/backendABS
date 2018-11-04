@@ -31,7 +31,6 @@ describe('Domain: employees', () => {
     const employees = await employeeDomain.getAll()
 
     expect(employees.length > 0).toBe(true)
-    expect(employees.length > 0).toBe(true)
   })
 
   it('should return an employee', async () => {
