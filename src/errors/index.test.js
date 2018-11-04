@@ -14,7 +14,6 @@ describe('Error: test handle error', () => {
     expect(errors.length > 0).toBe(true)
   })
 
-
   it('should return an error', () => {
     const errorData = { type: "notNull Violation", path: 'some field'}
     const errorType = handleError.typeError(errorData)
