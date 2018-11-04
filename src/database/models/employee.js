@@ -6,16 +6,19 @@ const Employee = (sequelize) => {
       type: Sequelize.STRING,
       set(val) {
         this.setDataValue('firstName', val.toUpperCase());
-      }  
+      },
+      allowNull: false
     },
     lastName: {
       type: Sequelize.STRING,
       set(val) {
         this.setDataValue('lastName', val.toUpperCase());
-      }  
+      },
+      allowNull: false
     },
     participation: {
-      type: Sequelize.INTEGER, 
+      type: Sequelize.INTEGER,
+      allowNull: false
     },
   })
 
