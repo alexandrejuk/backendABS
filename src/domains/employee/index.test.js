@@ -1,11 +1,16 @@
 const Employee = require('./')
 const employeeDomain = new Employee()
+const db = require('../../database')
 
 const employeeDataMock = {
   firstName: 'Alexandre',
   lastName: 'dos Santos Soares',
   participation: 40  
 }
+
+beforeAll(async () => {
+  await db.model('employee').sync({ force: true })
+})
 
 describe('Domain: employees', () => {
 
