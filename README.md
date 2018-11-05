@@ -2,8 +2,15 @@
 
 # Requerido
 * Docker
+* Docker-Compose
+* NodeJS
 
-# Informações da API 
+## Como usar
+1. clone o repositório: [git@github.com:alexandrejuk/backendABS.git](git@github.com:alexandrejuk/backendABS.git) 
+2. cd backendABS
+3. docker-compose up (para iniciar o banco de dados)
+4. npm test (executa os testes)
+5. npm start (executa a aplicação)
 
 
 ## Método GET

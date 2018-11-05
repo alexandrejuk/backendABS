@@ -1,6 +1,8 @@
 class HandleError {
   customError(errors) {
-    return errors.map(this.typeError)
+    if(errors) {
+      return errors.map(this.typeError)
+    }
   }
 
   typeError(error) {
