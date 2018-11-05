@@ -80,8 +80,8 @@ Exemplo da resposta do **endpoint** acima:
 ```json
 {
   "id": 3,
-  "firstName": "Andre",
-  "lastName": "Oliveira",
+  "firstName": "ANDRE",
+  "lastName": "OLIVEIRA",
   "participation": 40,
   "createdAt": "2018-11-04T10:43:05.236Z",
   "updatedAt": "2018-11-04T10:43:05.236Z"
