@@ -1,4 +1,4 @@
-# Test ABStartup 
+# Test ABStartups
 
 # Requerido
 * Docker
@@ -9,8 +9,9 @@
 1. clone o repositório: [git@github.com:alexandrejuk/backendABS.git](git@github.com:alexandrejuk/backendABS.git) 
 2. cd backendABS
 3. docker-compose up (para iniciar o banco de dados)
-4. npm test (executa os testes)
-5. npm start (executa a aplicação)
+4. npm install (para instalar as dependencias)
+5. npm test (executa os testes)
+6. npm start (executa a aplicação)
 
 
 ## Método GET
@@ -66,6 +67,9 @@ Exemplo da resposta do **endpoint** acima:
 
 ## Método POST
 A api possibilita cadastrar os employees(funcionário) com o método POST, segue exemplo do **body**, desse método.
+```
+POST http://localhost:3000/api/v1/employees
+```
 
 ```json
 {
