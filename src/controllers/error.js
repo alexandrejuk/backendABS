@@ -5,7 +5,7 @@ const handlerErrorController = (err, req, res, next) => {
   const errors = handleError.customError(err.errors)
   res
     .status(400)
-    .send({ errors: [errors] })
+    .send({ errors })
 }
 
 module.exports = handlerErrorController
