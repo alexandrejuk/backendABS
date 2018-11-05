@@ -49,9 +49,9 @@ Exemplo da resposta do **endpoint** acima:
 ```json
 {
   "id": 2,
-  "firstName": "ALEXANDRE",
-  "lastName": "DOS SANTOS SOARES",
-  "participation": 40,
+  "firstName": "THALITA",
+  "lastName": "SILVA SOUSA",
+  "participation": 60,
   "createdAt": "2018-11-04T10:43:05.236Z",
   "updatedAt": "2018-11-04T10:43:05.236Z"
 }
@@ -62,9 +62,22 @@ A api possibilita cadastrar os employees(funcionário) com o método POST, segue
 
 ```json
 {
-  "firstName": "Alexandre",
-  "lastName": "dos Santos Soares",
+  "firstName": "Andre",
+  "lastName": "Oliveira",
   "participation": 40  
+}
+```
+
+Exemplo da resposta do **endpoint** acima:
+
+```json
+{
+  "id": 3,
+  "firstName": "Andre",
+  "lastName": "Oliveira",
+  "participation": 40,
+  "createdAt": "2018-11-04T10:43:05.236Z",
+  "updatedAt": "2018-11-04T10:43:05.236Z"
 }
 ```
 
