@@ -67,3 +67,6 @@ A api possibilita cadastrar os employees(funcionário) com o método POST, segue
   "participation": 40  
 }
 ```
+
+## Autor
+[Alexandre dos Santos Soares](https://github.com/alexandrejuk)
