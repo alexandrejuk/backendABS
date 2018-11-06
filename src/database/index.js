@@ -1,8 +1,9 @@
 const Sequelize = require('sequelize')
 const EmployeeModel = require('./models/employee')
+const { DATABASE_ENV } = process.env
 
 const sequelize = new Sequelize('postgres', 'postgres', 'postgres', {
-  host: 'localhost',
+  host: DATABASE_ENV || 'localhost',
   dialect: 'postgres',
   operatorsAliases: false,
   logging: false,
