@@ -8,16 +8,11 @@
 ## Como usar
 1. clone o repositório: [git@github.com:alexandrejuk/backendABS.git](git@github.com:alexandrejuk/backendABS.git) 
 2. cd backendABS
-3. docker-compose up (para iniciar o banco de dados)
-4. npm install (para instalar as dependencias)
-5. npm test (executa os testes)
-6. npm start (executa a aplicação)
-
+3. docker-compose up (para iniciar a aplicação)
+4. npm test (para executar os testes)
 
 ## Método GET
-
 A api possibilita fazer consulta de todo employees(funcionários) ou apenas um passando o **id**, no endpoint.
-
 
 Exemplo todos os funcionarios
 ```
@@ -45,7 +40,6 @@ Exemplo da resposta do **endpoint** acima:
   }
 ]
 ```
-
 
 Exemplo apenas um funcionario
 ```
