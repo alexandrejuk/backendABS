@@ -16,7 +16,7 @@ class HandleError {
       return {
         statusCode: 400,
         message: 'data base error!',
-        errors: error.errors.map(this.typeDataBaseError)
+        errors: [this.typeDataBaseError()]
       }
     }
 
@@ -34,9 +34,9 @@ class HandleError {
     })
   }
 
-  typeDataBaseError(error) {
+  typeDataBaseError() {
     return ({
-      type: error.type,
+      type: 'internal error',
       messageError: `internal error on database!`
     })
   }
