@@ -2,10 +2,10 @@ const HandleError = require('../errors')
 const handleError = new HandleError()
 
 const handlerErrorController = (err, req, res, next) => {
-  const errors = handleError.customError(err.errors)
+  const error = handleError.customError(err)
   res
-    .status(400)
-    .send({ errors })
+    .status(error.statusCode)
+    .send(error)
 }
 
 module.exports = handlerErrorController

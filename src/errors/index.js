@@ -1,19 +1,44 @@
+const Sequelize = require('sequelize')
+const DataBaseError = Sequelize.Error
+const ValidationError = Sequelize.ValidationError
+
 class HandleError {
-  customError(errors) {
-    if(errors) {
-      return errors.map(this.typeError)
+  customError(error) {
+    if(error instanceof ValidationError) {
+      return {
+        statusCode: 400,
+        message: 'data base error!',
+        errors: error.errors.map(this.typeValidationError)
+      }
+    }
+
+    if(error instanceof DataBaseError) {
+      return {
+        statusCode: 400,
+        message: 'data base error!',
+        errors: error.errors.map(this.typeDataBaseError)
+      }
+    }
+
+    return {
+      statusCode: 500,
+      message: 'internal error!',
+      errors: []
     }
   }
 
-  typeError(error) {
-    if(error.type === 'notNull Violation') {
-      return ({
-        status: 400,
-        type: error.type,
-        messageError: `the field ${error.path} is required and cannot be null!`
-      })
-    }
-    return error
+  typeValidationError(error) {
+    return ({
+      type: error.type,
+      messageError: `the field ${error.path} is required and cannot be null!`
+    })
+  }
+
+  typeDataBaseError(error) {
+    return ({
+      type: error.type,
+      messageError: `internal error on database!`
+    })
   }
 
 }
