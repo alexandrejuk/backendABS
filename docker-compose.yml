@@ -2,9 +2,15 @@ version: '2.1'
 services:
   database:
     image: postgres:9.6.5-alpine
-    ports:
-      - 5432:5432
     volumes:
       - database:/var/lib/postgresql/data
+  backend:
+    build: .
+    environment: 
+      - DATABASE_ENV=database
+    ports:
+      - 3000:3000
+    links:
+      - database
 volumes:
  database:
