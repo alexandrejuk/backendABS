@@ -1,5 +1,6 @@
 const app = require('../app')
 const request = require('supertest')
+const db = require('../database')
 
 const url = '/api/v1/employees'
 
@@ -11,14 +12,15 @@ const employeeMock = {
 
 describe('controllers: test employee controller', () => {
 
-  it('should return status code 200', async () => {
-    const response = await request(app).get(url)
-    expect(response.status).toBe(200)
-  })
-
   it('should return all employees', async () => {
+    await request(app).post(url).send(employeeMock)
+    await request(app).post(url).send(employeeMock)
+    await request(app).post(url).send(employeeMock)
+
     const response = await request(app).get(url)
-    expect(response.body).toBeTruthy()
+
+    expect(response.body.length > 0).toBeTruthy()
+    expect(response.status).toBe(200)
   })
 
   it('should add a new employee', async () => {
@@ -50,10 +52,10 @@ describe('controllers: test employee controller', () => {
   it('should return a error 400 when add new employee without some fields', async () => {
 
     const { body: response } = await request(app).post(url).send({ firstName: 'alexandre' })
-    expect(response.errors).toBeTruthy()
-    expect(response.errors[0].messageError).toBeTruthy()
-    expect(response.errors[0].status).toBe(400)
 
+    expect(response.statusCode).toBe(400)
+    expect(response.message).toBe('data base error!')
+    expect(response.errors).toBeTruthy()
   })
 
 })

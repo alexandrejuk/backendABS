@@ -1,4 +1,7 @@
 const HandleError = require('./')
+const Sequelize = require('sequelize')
+const ValidationError = Sequelize.ValidationError
+
 const handleError = new HandleError()
 
 describe('Error: test handle error', () => {
@@ -7,18 +10,19 @@ describe('Error: test handle error', () => {
     expect(handleError instanceof HandleError).toBe(true)
   })
 
-  it('should return an array of errors', () => {
-    const errorData = "I'm a error"
-    const errors = handleError.customError([errorData])
-
-    expect(errors.length > 0).toBe(true)
+  it('should return an error 500', () => {
+    const errorData = new Error()
+    const error = handleError.customError(errorData)
+    expect(error.statusCode).toBe(500)
+    expect(error.message).toBe('internal error!')
+    expect(error.errors).toBeTruthy()
   })
 
-  it('should return an error', () => {
-    const errorData = { type: "notNull Violation", path: 'some field'}
-    const errorType = handleError.typeError(errorData)
-
-    expect(errorType.type).toBe(errorData.type)
-    expect(errorType.status).toBe(400)
+  it('should return an error 400', () => {
+    const errorData = new ValidationError()
+    const error = handleError.customError(errorData)
+    expect(error.statusCode).toBe(400)
+    expect(error.message).toBe('data base error!')
+    expect(error.errors).toBeTruthy()
   })
 })
