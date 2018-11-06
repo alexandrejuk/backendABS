@@ -8,8 +8,8 @@ const employeeDataMock = {
   participation: 40  
 }
 
-beforeAll(async () => {
-  await db.model('employee').sync({ force: true })
+beforeEach(async () => {
+  await db.model('employee').sync()
 })
 
 describe('Domain: employees', () => {
