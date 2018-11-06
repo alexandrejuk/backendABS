@@ -1,4 +1,5 @@
 # Test ABStartups
+Teste técnico da ABStartups, desenvolvido com NodeJS, ExpressJS e a base de dados, feita com PostgresSQL, usando Sequelize para o ORM.
 
 # Requerido
 * Docker
